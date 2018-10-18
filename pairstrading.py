@@ -9,9 +9,9 @@ import argparse
 import datetime as dt
 import numpy as np
 import pandas as pd
-import scipy as sc
 import matplotlib.pyplot as plt
 
+from scipy import stats
 from dateutil import rrule 
 from itertools import combinations
 
@@ -662,8 +662,8 @@ if __name__ == '__main__':
     daily_vol = np.std(log_returns_df)
     ann_ret = np.mean(log_returns_df)*252
     ann_vol_ret = np.std(log_returns_df)*np.sqrt(252)
-    skew = sc.stats.skew(log_returns_df)
-    kurt = sc.stats.kurtosis(log_returns_df)
+    skew = stats.skew(log_returns_df)
+    kurt = stats.kurtosis(log_returns_df)
     min_daily_ret = np.min(log_returns_df)
     max_daily_ret = np.max(log_returns_df)
     cum_ret = cum_returns_df[-1]-1
