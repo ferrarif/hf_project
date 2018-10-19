@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from scipy import stats
+from scipy import 
 from dateutil import rrule 
 from itertools import combinations
 
@@ -634,7 +634,7 @@ if __name__ == '__main__':
     EXT = '.csv'
     
     # reading data
-    totret_df = read_df_from_db('TOT_RETURN_INDEX_GROSS_DVDS')
+    close_df = read_df_from_db('PX_LAST')
     # define dates
     trad_date_from = dt.datetime.strptime(args.trad_date_from,'%Y-%m-%d').date()
     trad_date_to = dt.datetime.strptime(args.trad_date_to,'%Y-%m-%d').date()
@@ -644,7 +644,7 @@ if __name__ == '__main__':
 #     trad_date_from = dt.date(2011, 2, 1)
 #     trad_date_to = dt.date(2014, 1, 31)
     # get simple returns dataframe and dates
-    dates, returns_df = simulate_trading(totret_df,
+    dates, returns_df = simulate_trading(close_df,
                                          trad_date_from,
                                          trad_date_to,
                                          args.trad_freq,
